@@ -1,0 +1,59 @@
+﻿
+/* Home/Index */
+
+form {
+    margin-top: 10px;
+}
+
+.entry-form {
+    margin-top: 10%;
+}
+
+#form-entry div label {
+    margin-bottom: 5px;
+}
+
+#form-entry div select {
+    width: 175px;
+    margin-bottom: 10px;
+}
+
+#form-entry div input {
+    width: 175px;
+    margin-bottom: 10px;
+}
+
+#form-entry .btn {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-left: 12.5px;
+}
+
+/* /Account/MainPage */
+
+.row label {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.row-label .btn {
+    background: #99e6ff;
+}
+
+.row-table {
+    margin-top: 15px;
+}
+
+
+/* For "validation-form.js" */
+.error {
+    border: 2px solid #f00;
+    outline: none;
+}
+
+label.error {
+    color: #ff0000;
+    height: 17px;
+    border-color:transparent;
+}
+

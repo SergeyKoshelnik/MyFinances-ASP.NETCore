@@ -1,0 +1,70 @@
+﻿@model List<User>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Вход";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3 col-lg-offset-5 entry-form">
+
+            <form id="form-entry" asp-controller="Account" asp-action="MainPage"
+                  method="post">
+                
+                <div class="form-group">
+
+                    <label><i>Выберите пользователя:</i></label>
+
+                    <select name="formEnterUser" class="form-control">
+                        @{
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <option value="@item.Id">@item.Username</option>
+                                }
+                            }
+                            else
+                            {
+                                <option>--Список пуст--</option>
+                            }
+                        }
+
+                    </select>
+
+                </div>
+                
+                <div class="form-group">
+                    <label><i>Введите пароль</i></label>
+
+                    <input id="password" name="password" type="password" class="form-control" />
+                </div>
+
+                <div><input class="btn btn-success btn-sm" name="btnEnterUser" type="submit" value="Войти"/></div>
+
+                <div>
+                    <a asp-action="Registration">
+                        <button class="btn btn-info btn-sm" name="btnRegistration"
+                                type="button">
+                            Регистрация
+                        </button>
+                    </a>
+                </div>
+            </form>
+           
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/validation-form.js"></script>
+}

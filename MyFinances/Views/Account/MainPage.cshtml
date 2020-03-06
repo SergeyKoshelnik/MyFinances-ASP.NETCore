@@ -1,0 +1,240 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = $"Добро пожаловать, {ViewBag.User.Username}";
+}
+
+
+<div class="row row-label">
+    <div class="col-lg-3">
+
+        <label>Таблица расходов</label>
+        <a asp-controller="AddRemoveOperation" asp-action="AddCost" asp-route-id="@ViewBag.User.Id">
+            <button class="btn btn-default btn-xs" name="btnAddCost"
+                    type="button">
+                Добавить
+            </button>
+        </a>
+
+    </div>
+</div>
+
+<!-- Table "Costs" -->
+
+<div class="row row-table">
+    <div class="col-lg-12 table-bordered table-responsive">
+
+        <table id="tableCosts" class="table">
+
+            <thead>
+            <tr>
+                <th><i>Дата операции</i></th>
+                <th><i>Сумма</i></th>
+                <th><i>Комментарий</i></th>
+                <th></th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+
+            @{
+                foreach (var item in ViewBag.Transactions)
+                {
+                    if (item.Cost > 0)
+                    {
+                        <tr>
+                            <td>@item.DateTimeTransaction.ToString("d")</td>
+                            <td>@item.Cost грн</td>
+                            <td>@item.CommentforCategory</td>
+                            <td>
+                                <a asp-action="DeleteCost" asp-controller="AddRemoveOperation"
+                                   asp-route-id="@item.Id">
+                                    Удалить
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<div class="row row-label">
+    <div class="col-lg-3">
+
+        <label>Таблица доходов</label>
+        <a asp-controller="AddRemoveOperation" asp-action="AddIncome" asp-route-id="@ViewBag.User.Id">
+            <button class="btn btn-default btn-xs" name="btnAddIncome"
+                    type="button">
+                Добавить
+            </button>
+        </a>
+
+    </div>
+</div>
+
+<!-- Table "Incomes" -->
+
+<div class="row row-table">
+    <div class="col-lg-12 table-bordered table-responsive">
+
+        <table id="tableIncomes" class="table">
+
+            <thead>
+            <tr>
+                <th><i>Дата операции</i></th>
+                <th><i>Сумма</i></th>
+                <th><i>Комментарий</i></th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            @{
+                foreach (var item in ViewBag.Transactions)
+                {
+                    if (item.Income > 0)
+                    {
+                        <tr>
+                            <td>@item.DateTimeTransaction.ToString("d")</td>
+                            <td>@item.Income грн</td>
+                            <td>@item.CommentforCategory</td>
+                            <td>
+                                <a asp-action="DeleteIncome" asp-controller="AddRemoveOperation"
+                                   asp-route-id="@item.Id">
+                                    Удалить
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<div class="row row-label">
+    <div class="col-lg-3">
+
+        <label>Таблица должников</label>
+        <a asp-controller="AddRemoveOperation" asp-action="AddDebt" asp-route-id="@ViewBag.User.Id">
+            <button class="btn btn-default btn-xs" name="btnAddDebt"
+                    type="button">
+                Добавить
+            </button>
+        </a>
+
+    </div>
+</div>
+
+<!-- Table "Debts" -->
+
+<div class="row row-table">
+    <div class="col-lg-12 table-bordered table-responsive">
+
+        <table id="tableDebts" class="table">
+
+            <thead>
+            <tr>
+                <th><i>Дата</i></th>
+                <th><i>Имя должника</i></th>
+                <th><i>Сумма долга</i></th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            @{
+                foreach (var item in ViewBag.Debts)
+                {
+                    <tr>
+                        <td>@item.DateEndDate.ToString("d")</td>
+                        <td>@item.DebtName</td>
+                        <td>@item.SummofDebt грн</td>
+                        <td>
+
+                            <a asp-action="DeleteDebt" asp-controller="AddRemoveOperation"
+                               asp-route-id="@item.Id">
+                                Удалить
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<div class="row row-label">
+    <div class="col-lg-3">
+
+        <label>Таблица накоплений</label>
+        <a asp-controller="AddRemoveOperation" asp-action="AddAccumulation" asp-route-id="@ViewBag.User.Id">
+            <button class="btn btn-default btn-xs" name="btnAddAccumulation"
+                    type="button">
+                Добавить
+            </button>
+        </a>
+
+    </div>
+</div>
+
+<!-- Table "Accumulations" -->
+
+<div class="row row-table">
+    <div class="col-lg-12 table-bordered table-responsive">
+
+        <table id="tableAccumulations" class="table">
+
+            <thead>
+            <tr>
+                <th><i>Дата</i></th>
+                <th><i>Цель</i></th>
+                <th><i>Стоимость</i></th>
+                <th><i>Комментарий</i></th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            @{
+                foreach (var item in ViewBag.Accumulations)
+                {
+                    <tr>
+                        <td>@item.DateTimeAccumulation.ToString("d")</td>
+                        <td>@item.AccumulationName</td>
+                        <td>@item.SummofAccumulation грн</td>
+                        <td>@item.CommentforAccumulation</td>
+                        <td>
+                            <a asp-action="DeleteAccumulation" asp-controller="AddRemoveOperation"
+                               asp-route-id="@item.Id">
+                                Удалить
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

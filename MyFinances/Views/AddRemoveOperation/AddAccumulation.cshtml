@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Добавить покупку";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <h3>Добавить покупку</h3>
+            <hr/>
+
+            <form id="form-addAccumulation" asp-controller="AddRemoveOperation" asp-action="AddAccumulation" asp-route-id="@ViewBag.UserId"
+                  method="post">
+
+                <div class="form-group">
+                    <label><i>Наименование покупки</i></label>
+
+                    <input name="txtAccumulationName" type="text" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label><i>Введите сумму</i></label>
+
+                    <input name="txtSummofAccumulation" type="text" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Комментарий</label>
+
+                    <input name="txtCommentforAccumulation" type="text" class="form-control"/>
+                </div>
+
+                <div><input type="submit" name="btnAddCost" class="btn btn-success btn-sm" value="Подтвердить"/></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/validation-form.js"></script>
+}

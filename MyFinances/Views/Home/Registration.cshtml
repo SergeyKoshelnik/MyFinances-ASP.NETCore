@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Title = "Регистрация";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            
+            <h3>Регистрация</h3>
+            <hr/>
+
+            <form id="form-registration" asp-controller="Home" asp-action="Registration"
+                  method="post">
+                
+                <div class="form-group">
+                    <label><i>Введите имя</i></label>
+
+                    <input name="txtUserName" class="form-control" type="text" />
+                </div>
+                
+                <div class="form-group">
+                    <label><i>Введите пароль</i></label>
+
+                    <input id="password" name="password" class="form-control" type="password" />
+                </div>
+                
+                <div class="form-group">
+                    <label><i>Подтвердите пароль</i></label>
+
+                    <input id="confirmPassword" name="confirmPassword" class="form-control" type="password" />
+                </div>
+                
+                <div class="form-group">
+                    <label><i>Введите контрольный вопрос</i></label>
+
+                    <input name="txtQuestion" class="form-control" type="text" />
+                </div>
+                
+                <div class="form-group">
+                    <label><i>Введите ответ на контрольный вопрос</i></label>
+
+                    <input name="txtAnswer" class="form-control" type="text" />
+                </div>
+
+                <div><input type="submit" name="btnAddUser" class="btn btn-success btn-sm" value="Подтвердить" /></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/validation-form.js"></script>
+}
