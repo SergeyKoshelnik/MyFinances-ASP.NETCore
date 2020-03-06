@@ -8,16 +8,9 @@
 
         messages: {
             password: {
-                required: 'Введите пароль'
+                required: "Введите пароль"
             }
         }
-
-        //errorPlacement: function (label, element) {
-        //    label.addClass('arrow');
-        //    label.appendTo('.temp');
-        //},
-        //wrapper: 'span'
-
     });
 
     $("#form-registration").validate({
@@ -34,22 +27,21 @@
 
 
         messages: {
-
             txtUserName: {
-                required: 'Введите имя'
+                required: "Введите имя"
             },
             password: {
-                required: 'Введите пароль'
+                required: "Введите пароль"
             },
             confirmPassword: {
-                required: 'Подтвердите пароль',
-                equalTo: 'Пароли не совпадают'
+                required: "Подтвердите пароль",
+                equalTo: "Пароли не совпадают"
             },
             txtQuestion: {
-                required: 'Введите контрольный вопрос'
+                required: "Введите контрольный вопрос"
             },
             txtAnswer: {
-                required: 'Введите ответ'
+                required: "Введите ответ"
             }
         }
 
@@ -63,12 +55,11 @@
 
 
         messages: {
-
             txtCommentForCost: {
-                required: 'Введите комментарий'
+                required: "Введите комментарий"
             },
             txtSummofCost: {
-                required: 'Введите сумму'
+                required: "Введите сумму"
             }
         }
 
@@ -82,12 +73,11 @@
 
 
         messages: {
-
             txtCommentForIncome: {
-                required: 'Введите комментарий'
+                required: "Введите комментарий"
             },
             txtSummofIncome: {
-                required: 'Введите сумму'
+                required: "Введите сумму"
             }
         }
 
@@ -101,12 +91,11 @@
 
 
         messages: {
-
             txtNameForDebt: {
-                required: 'Введите имя'
+                required: "Введите имя"
             },
             txtSummofDebt: {
-                required: 'Введите сумму'
+                required: "Введите сумму"
             }
         }
 
@@ -120,12 +109,11 @@
 
 
         messages: {
-
             txtAccumulationName: {
-                required: 'Введите наименование'
+                required: "Введите наименование"
             },
             txtSummofAccumulation: {
-                required: 'Введите сумму'
+                required: "Введите сумму"
             }
         }
 

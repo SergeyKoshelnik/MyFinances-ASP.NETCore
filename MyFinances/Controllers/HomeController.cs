@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,9 +9,7 @@ namespace MyFinances.Controllers
 {
     public class HomeController : Controller
     {
-        
         private List<User> users;
-
 
         public IActionResult Index()
         {
